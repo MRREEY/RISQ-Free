@@ -1,0 +1,19 @@
+:root {
+    --risqred: #FF5C50;
+    --risqblue: #38A3A5;
+    --risqdarkgreen: #57CC99;
+    --risqgreen: #80ED99;
+    --risqlightgreen: #C7F9CC;
+    --risqgemeentegreen: #00811f;
+}
+
+.g-green{
+    color: var(--risqgemeentegreen);
+}
+
+.title {
+    background-color: var(--risqgemeentegreen);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
