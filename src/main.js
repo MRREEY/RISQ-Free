@@ -4,22 +4,32 @@ window.addEventListener('load', (event) => {
   init()
 
   function init() {
-    let scene1 = document.createElement('div')
+    let welcomeScene = document.createElement('div')
     let title = document.createElement('h1')
     let subtitle = document.createElement('h2')
     let explanation = document.createElement('p')
     let button = document.createElement('button')
-    button.innerHTML = `Start!`
+   
+    welcomeScene.setAttribute("class", 'welcome-scene')
+    title.setAttribute("class", 'title')
+    subtitle.setAttribute("class", 'subtitle')
+    explanation.setAttribute("class", 'explanation')
+    button.setAttribute("class", 'button')
 
-    document.body.append(scene1)
-    scene1.append(title)
-    scene1.append(subtitle)
-    scene1.append(explanation)
-    scene1.append(button)
+    title.innerHTML = `Gemeente Rotterdam`
+    subtitle.innerHTML = `Street Choice`
+    explanation.innerHTML = `Dit is een app gemaakt door CMD & CMGT studenten van de Hogeschool Rotterdam in samenwerking met de Gemeente Rotterdam. In deze app gaan jullie samen een aantal vragen beantwoorden over het seksuele straatintimidatie van Rotterdam. Veel succes!`
+    button.innerHTML = `Start!`
+    
+    document.body.append(welcomeScene)
+    welcomeScene.append(title)
+    welcomeScene.append(subtitle)
+    welcomeScene.append(explanation)
+    welcomeScene.append(button)
 
     button.addEventListener('click', function start(e) {
       e.preventDefault()
-      scene1.remove()
+      welcomeScene.remove()
       console.log("Start");
       layout()
   })
@@ -27,13 +37,21 @@ window.addEventListener('load', (event) => {
 
   function layout() {
     const statementScene = document.createElement('div')
-    statementScene.setAttribute('id', 'statementScene')
+
     const title = document.createElement('h1')
     const image = document.createElement('img')
     const button1 = document.createElement('button')
     const button2 = document.createElement('button')
     const a = document.createElement('a')
     const pagination = document.createElement('p')
+
+    statementScene.setAttribute('id', 'statementScene')
+    title.setAttribute("class", 'title')
+    image.setAttribute("class", 'image')
+    button1.setAttribute("class", 'positive')
+    button2.setAttribute("class", 'negative')
+    a.setAttribute("class", 'slider-link')
+    pagination.setAttribute("class", 'pagination')
 
     document.body.append(statementScene)
     statementScene.append(title)
@@ -49,27 +67,50 @@ window.addEventListener('load', (event) => {
   function statement(i) {
     const parent = document.getElementById('statementScene')
     let childs = parent.childNodes;
+    console.log(i);
+    switch (i) {
+      case 1:
+        childs[0].innerHTML = `Wat vinden jullie van deze opmerking?`
+        childs[1].setAttribute("src", `./src/storyboards/${i}.png`) 
+        childs[2].innerHTML = `Complimenteren`
+        childs[3].innerHTML = `Intimideren`
+        childs[4].innerHTML = `Geen keus kunnen maken?`
+        childs[5].innerHTML = `${i}/3`
+      break;
+      case 2:
+        childs[0].innerHTML = `Zouden jullie dit zeggen tegen de persoon 
+        die nu langs loopt?`
+        childs[1].setAttribute("src", `./src/storyboards/${i}.png`) 
+        childs[2].innerHTML = `Ja`
+        childs[3].innerHTML = `Nee`
+        childs[4].innerHTML = `Deze scenario komt niet voor`
+        childs[5].innerHTML = `${i}/3`
+      break;
+      case 3:
+        childs[0].innerHTML = `Wat zouden jullie doen als een persoon het volgende zegt?`
+        childs[1].setAttribute("src", `./src/storyboards/${i}.png`) 
+        childs[2].innerHTML = `Helpen`
+        childs[3].innerHTML = `Wegsturen`
+        childs[4].innerHTML = `Geen keus kunnen maken?`
+        childs[5].innerHTML = `${i}/3`
+      break;
+      case 4:
+        parent.remove()
+        endScreen()
+      break;
+      default:
+        break;
+    }
 
-    childs[0].innerHTML = `Zou jij dit zeggen tegen de persoon die nu langs loopt?`
-    childs[1].setAttribute("src", `./src/storyboards/${i}.png`) 
-    childs[2].innerHTML = `Complimenteren`
-    childs[3].innerHTML = `Intimideren`
-    childs[4].innerHTML = `Geen keus kunnen maken?`
-    childs[5].innerHTML = `${i}/3`
-
-    let form = document.createElement('form')
-    document.body.append(form)
     
     childs[2].addEventListener('click', function nextQuestion(e) {
       e.preventDefault()
-      parent.remove()
-      statement(i++)
+      statement(i+1)
     })
 
     childs[3].addEventListener('click', function nextQuestion(e) {
       e.preventDefault()
-      parent.remove()
-      statement(i++)
+      statement(i+1)
     })
 
     childs[4].addEventListener('click', function slideScene(e) {
@@ -112,8 +153,39 @@ window.addEventListener('load', (event) => {
       alternativeScene(i)
     })
 
-    function alternativeScene(i) {
-
+    function endScreen() {
+      let endScreen = document.createElement('div')
+      let title = document.createElement('h1')
+      let label1 = document.createElement('h2')
+      let button1 = document.createElement('button')
+      let label2 = document.createElement('h2')
+      let button2 = document.createElement('button')
+      let link1 = document.createElement("a")
+      let link2 = document.createElement("a")
+     
+      endScreen.setAttribute("class", 'welcome-scene')
+      title.setAttribute("class", 'title')
+      label1.setAttribute("class", 'label')
+      button1.setAttribute("class", 'button')
+      link1.setAttribute("href", 'https://play.google.com/store/apps/details?id=nl.gemeenterotterdam.stopapp&hl=en&gl=US')
+      label2.setAttribute("class", 'label')
+      button2.setAttribute("class", 'button')
+      link2.setAttribute("href", 'https://www.rotterdam.nl/wonen-leven/straatintimidatie/')
+  
+      title.innerHTML = `Opzoek naar meer informatie?`
+      label1.innerHTML = `Download de app`
+      link1.innerHTML = `STOPR app`
+      label2.innerHTML = `Of ga naar de website`
+      link2.innerHTML = `Gemeente Rotterdam`
+      
+      document.body.append(endScreen)
+      endScreen.append(title)
+      endScreen.append(label1)
+      endScreen.append(button1)
+      button1.append(link1)
+      endScreen.append(label2)
+      endScreen.append(button2)
+      button2.append(link2)
     }
   }
 });
