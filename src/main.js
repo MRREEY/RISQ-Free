@@ -74,7 +74,46 @@ window.addEventListener('load', (event) => {
 
     childs[4].addEventListener('click', function slideScene(e) {
       e.preventDefault()
-      alternativeScene()
+      childs[2].remove()
+      childs[2].remove()
+      childs[2].remove()
+      childs[2].remove()
+
+      const range = document.createElement('input')
+      range.setAttribute("type", 'range')
+      range.setAttribute("list", 'tickmarks')
+      range.setAttribute("step", "16.66")
+      
+      const labels = document.createElement('datalist')
+      labels.setAttribute("id", 'tickmarks')
+      for (let i = 0; i < 6; i++) {
+        const option = document.createElement('option')
+        if (i === 0) {
+          option.setAttribute("label", `intimiderend`)
+        } else if (i === 5) {
+          option.setAttribute("label", `complimenterend`)
+        }
+        option.setAttribute("value", `${i*1}`)
+        labels.append(option)
+      }
+
+
+      parent.append(labels)
+      parent.append(range)
+
+
+      const button3 = document.createElement('button')
+      button3.innerHTML = `opslaan`
+      parent.append(button3)
+
+      const a = document.createElement('a')
+      a.innerHTML = `Terug naar het thuisscherm`
+      parent.append(a)
+      alternativeScene(i)
     })
+
+    function alternativeScene(i) {
+
+    }
   }
 });
