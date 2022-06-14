@@ -102,7 +102,6 @@ window.addEventListener('load', (event) => {
         break;
     }
 
-    
     childs[2].addEventListener('click', function nextQuestion(e) {
       e.preventDefault()
       statement(i+1)
@@ -120,12 +119,15 @@ window.addEventListener('load', (event) => {
       childs[2].remove()
       childs[2].remove()
 
+      const labels = document.createElement('datalist')
       const range = document.createElement('input')
+      const saveButton = document.createElement('button')
+      const backlink = document.createElement('a')
+
       range.setAttribute("type", 'range')
       range.setAttribute("list", 'tickmarks')
       range.setAttribute("step", "16.66")
-      
-      const labels = document.createElement('datalist')
+
       labels.setAttribute("id", 'tickmarks')
       for (let i = 0; i < 6; i++) {
         const option = document.createElement('option')
@@ -137,20 +139,14 @@ window.addEventListener('load', (event) => {
         option.setAttribute("value", `${i*1}`)
         labels.append(option)
       }
-
-
+      
+      saveButton.innerHTML = `opslaan`
+      backlink.innerHTML = `Terug naar het thuisscherm`
+      
       parent.append(labels)
       parent.append(range)
-
-
-      const button3 = document.createElement('button')
-      button3.innerHTML = `opslaan`
-      parent.append(button3)
-
-      const a = document.createElement('a')
-      a.innerHTML = `Terug naar het thuisscherm`
-      parent.append(a)
-      alternativeScene(i)
+      parent.append(saveButton)
+      parent.append(backlink)
     })
 
     function endScreen() {
