@@ -21,6 +21,10 @@ body {
     font-family: "Montserrat";
 }
 
+.white-b {
+    background-color: white;
+}
+
 .g-green{
     color: var(--risqgemeentegreen);
 }
