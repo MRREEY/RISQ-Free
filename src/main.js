@@ -68,6 +68,9 @@ window.addEventListener('load', (event) => {
 
   function statement(i) {
     const parent = document.getElementById('statementScene')
+    const background = document.getElementById('background')
+    background.setAttribute("class", 'white-b')
+    
     let childs = parent.childNodes;
     console.log(i);
     switch (i) {
