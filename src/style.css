@@ -7,6 +7,20 @@
     --risqgemeentegreen: #00811f;
 }
 
+@font-face {
+    font-family: "Montserrat";
+    src:url("./fonts/Montserrat-VariableFont_wght.ttf")
+}
+
+@font-face {
+    font-family: "Montserrat Bold";
+    src:url("./fonts/static/Montserrat-Bold.ttf")
+}
+
+body {
+    font-family: "Montserrat";
+}
+
 .g-green{
     color: var(--risqgemeentegreen);
 }
