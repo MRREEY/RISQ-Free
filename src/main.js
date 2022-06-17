@@ -12,15 +12,14 @@ window.addEventListener('load', (event) => {
    
     welcomeScene.setAttribute("class", 'welcome-scene')
     title.setAttribute("class", 'title')
-    subtitle.setAttribute("class", 'subtitle')
+    subtitle.setAttribute("class", 'subtitleBegin')
     explanation.setAttribute("class", 'explanation')
-    button.setAttribute("class", 'button')
-
+    button.setAttribute("class", 'buttonBegin')
     document.getElementById("background").style.background = "#00811f";
 
     title.innerHTML = `Gemeente Rotterdam`
     subtitle.innerHTML = `Street Choice`
-    button.innerHTML = `Start!`
+    button.innerHTML = `START`
     explanation.innerHTML = `Let op! Dit dient door minimaal 2 mensen beantwoord te worden.`
 
     document.body.append(welcomeScene)
