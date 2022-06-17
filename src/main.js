@@ -18,14 +18,14 @@ window.addEventListener('load', (event) => {
 
     title.innerHTML = `Gemeente Rotterdam`
     subtitle.innerHTML = `Street Choice`
-    explanation.innerHTML = `Dit is een app gemaakt door CMD & CMGT studenten van de Hogeschool Rotterdam in samenwerking met de Gemeente Rotterdam. In deze app gaan jullie samen een aantal vragen beantwoorden over het seksuele straatintimidatie van Rotterdam. Veel succes!`
     button.innerHTML = `Start!`
-    
+    explanation.innerHTML = `Let op! Dit dient door minimaal 2 mensen beantwoord te worden.`
+
     document.body.append(welcomeScene)
     welcomeScene.append(title)
     welcomeScene.append(subtitle)
-    welcomeScene.append(explanation)
     welcomeScene.append(button)
+    welcomeScene.append(explanation)
 
     button.addEventListener('click', function start(e) {
       e.preventDefault()
