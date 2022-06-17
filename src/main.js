@@ -11,10 +11,11 @@ window.addEventListener('load', (event) => {
     let button = document.createElement('button')
    
     welcomeScene.setAttribute("class", 'welcome-scene')
-    title.setAttribute("class", 'title')
+    title.setAttribute("class", 'textTop')
     subtitle.setAttribute("class", 'subtitleBegin')
-    explanation.setAttribute("class", 'explanation')
+    explanation.setAttribute("class", 'explanationBegin')
     button.setAttribute("class", 'buttonBegin')
+    
     document.getElementById("background").style.background = "#00811f";
 
     title.innerHTML = `Gemeente Rotterdam`
@@ -47,7 +48,7 @@ window.addEventListener('load', (event) => {
     const pagination = document.createElement('p')
 
     statementScene.setAttribute('id', 'statementScene')
-    title.setAttribute("class", 'title')
+    title.setAttribute("class", 'textTop')
     image.setAttribute("class", 'image')
     button1.setAttribute("class", 'positive')
     button2.setAttribute("class", 'negative')

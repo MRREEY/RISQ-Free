@@ -25,11 +25,12 @@ body {
     background-color: var(--risqgemeentegreen);
 }
 
-.title {
+.textTop {
     background-color: var(--risqgemeentegreen);
     display: flex;
     justify-content: center;
     align-items: center;
+    color: white;
 }
 
 datalist {
@@ -63,4 +64,9 @@ datalist {
     text-align: center;
     margin-top: 250px;
     color: white;
+}
+
+.explanationBegin {
+    color: white;
+    text-align: center;
 }
