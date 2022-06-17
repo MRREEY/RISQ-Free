@@ -16,6 +16,8 @@ window.addEventListener('load', (event) => {
     explanation.setAttribute("class", 'explanation')
     button.setAttribute("class", 'button')
 
+    document.getElementById("background").style.background = "#00811f";
+
     title.innerHTML = `Gemeente Rotterdam`
     subtitle.innerHTML = `Street Choice`
     explanation.innerHTML = `Dit is een app gemaakt door CMD & CMGT studenten van de Hogeschool Rotterdam in samenwerking met de Gemeente Rotterdam. In deze app gaan jullie samen een aantal vragen beantwoorden over het seksuele straatintimidatie van Rotterdam. Veel succes!`
