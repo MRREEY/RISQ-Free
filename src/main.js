@@ -15,8 +15,6 @@ window.addEventListener('load', (event) => {
     subtitle.setAttribute("class", 'subtitleBegin')
     explanation.setAttribute("class", 'explanationBegin')
     button.setAttribute("class", 'buttonBegin')
-    
-    document.getElementById("background").style.background = "#00811f";
 
     title.innerHTML = `Gemeente Rotterdam`
     subtitle.innerHTML = `Street Choice`
@@ -40,6 +38,8 @@ window.addEventListener('load', (event) => {
   function layout() {
     const statementScene = document.createElement('div')
 
+    const greenBackground = document.createElement('div')
+
     const title = document.createElement('h1')
     const image = document.createElement('img')
     const button1 = document.createElement('button')
@@ -48,6 +48,7 @@ window.addEventListener('load', (event) => {
     const pagination = document.createElement('p')
 
     statementScene.setAttribute('id', 'statementScene')
+    greenBackground.setAttribute('id', 'greenTop')
     title.setAttribute("class", 'textTop')
     image.setAttribute("class", 'image')
     button1.setAttribute("class", 'positive')
@@ -55,6 +56,7 @@ window.addEventListener('load', (event) => {
     a.setAttribute("class", 'slider-link')
     pagination.setAttribute("class", 'pagination')
 
+    document.body.append(greenBackground)
     document.body.append(statementScene)
     statementScene.append(title)
     statementScene.append(image)
@@ -77,8 +79,8 @@ window.addEventListener('load', (event) => {
       case 1:
         childs[0].innerHTML = `Wat vinden jullie van deze opmerking?`
         childs[1].setAttribute("src", `./src/storyboards/${i}.png`) 
-        childs[2].innerHTML = `Complimenteren`
-        childs[3].innerHTML = `Intimideren`
+        childs[2].innerHTML = `Complimenterend`
+        childs[3].innerHTML = `Intimiderend`
         childs[4].innerHTML = `Geen keus kunnen maken?`
         childs[5].innerHTML = `${i}/3`
       break;
