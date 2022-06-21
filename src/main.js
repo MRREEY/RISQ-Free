@@ -11,21 +11,21 @@ window.addEventListener('load', (event) => {
     let button = document.createElement('button')
    
     welcomeScene.setAttribute("class", 'welcome-scene')
-    title.setAttribute("class", 'title')
-    subtitle.setAttribute("class", 'subtitle')
-    explanation.setAttribute("class", 'explanation')
-    button.setAttribute("class", 'button')
+    title.setAttribute("class", 'textTop')
+    subtitle.setAttribute("class", 'subtitleBegin')
+    explanation.setAttribute("class", 'explanationBegin')
+    button.setAttribute("class", 'buttonBegin')
 
     title.innerHTML = `Gemeente Rotterdam`
-    subtitle.innerHTML = `Street Choice`
-    explanation.innerHTML = `Dit is een app gemaakt door CMD & CMGT studenten van de Hogeschool Rotterdam in samenwerking met de Gemeente Rotterdam. In deze app gaan jullie samen een aantal vragen beantwoorden over het seksuele straatintimidatie van Rotterdam. Veel succes!`
-    button.innerHTML = `Start!`
-    
+    subtitle.innerHTML = `TERRAS TALKS`
+    button.innerHTML = `START`
+    explanation.innerHTML = `Let op! Dit dient door minimaal 2 mensen beantwoord te worden.`
+
     document.body.append(welcomeScene)
     welcomeScene.append(title)
     welcomeScene.append(subtitle)
-    welcomeScene.append(explanation)
     welcomeScene.append(button)
+    welcomeScene.append(explanation)
 
     button.addEventListener('click', function start(e) {
       e.preventDefault()
@@ -38,6 +38,8 @@ window.addEventListener('load', (event) => {
   function layout() {
     const statementScene = document.createElement('div')
 
+    const greenBackground = document.createElement('div')
+
     const title = document.createElement('h1')
     const image = document.createElement('img')
     const button1 = document.createElement('button')
@@ -46,13 +48,15 @@ window.addEventListener('load', (event) => {
     const pagination = document.createElement('p')
 
     statementScene.setAttribute('id', 'statementScene')
-    title.setAttribute("class", 'title')
+    greenBackground.setAttribute('id', 'greenTop')
+    title.setAttribute("class", 'textTop')
     image.setAttribute("class", 'image')
     button1.setAttribute("class", 'positive')
     button2.setAttribute("class", 'negative')
     a.setAttribute("class", 'slider-link')
     pagination.setAttribute("class", 'pagination')
 
+    document.body.append(greenBackground)
     document.body.append(statementScene)
     statementScene.append(title)
     statementScene.append(image)
@@ -66,14 +70,17 @@ window.addEventListener('load', (event) => {
 
   function statement(i) {
     const parent = document.getElementById('statementScene')
+    const background = document.getElementById('background')
+    background.setAttribute("class", 'white-b')
+    
     let childs = parent.childNodes;
     console.log(i);
     switch (i) {
       case 1:
         childs[0].innerHTML = `Wat vinden jullie van deze opmerking?`
         childs[1].setAttribute("src", `./src/storyboards/${i}.png`) 
-        childs[2].innerHTML = `Complimenteren`
-        childs[3].innerHTML = `Intimideren`
+        childs[2].innerHTML = `Complimenterend`
+        childs[3].innerHTML = `Intimiderend`
         childs[4].innerHTML = `Geen keus kunnen maken?`
         childs[5].innerHTML = `${i}/3`
       break;
