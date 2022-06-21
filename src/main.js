@@ -17,7 +17,7 @@ window.addEventListener('load', (event) => {
     button.setAttribute("class", 'buttonBegin')
 
     title.innerHTML = `Gemeente Rotterdam`
-    subtitle.innerHTML = `Street Choice`
+    subtitle.innerHTML = `TERRAS TALKS`
     button.innerHTML = `START`
     explanation.innerHTML = `Let op! Dit dient door minimaal 2 mensen beantwoord te worden.`
 
