@@ -1,32 +1,117 @@
-body {
-	background-color: lightcyan;
-	background-image: url("./images/backgrounds/sea.png");
-	text-align: center;
-	font-family: "Pirate";
+:root {
+    --risqred: #FF5C50;
+    --risqblue: #38A3A5;
+    --risqdarkgreen: #57CC99;
+    --risqgreen: #80ED99;
+    --risqlightgreen: #C7F9CC;
+    --risqgemeentegreen: #00811f;
 }
 
 @font-face {
-	font-family: "Pirate";
-	src: url("./fonts/BattlesbridgeDemo-AL126.ttf")
+    font-family: "Montserrat";
+    src:url("./fonts/Montserrat-VariableFont_wght.ttf")
 }
 
-.pirate {
-	font-family: "Pirate";
+@font-face {
+    font-family: "Montserrat Bold";
+    src:url("./fonts/static/Montserrat-Bold.ttf")
 }
 
-ul {
-	display: flex;
-	flex-wrap: wrap;
-	list-style-type: none;
-	padding: 2px;
-	justify-content: center;
+body {
+    font-family: "Montserrat";
+    padding: 0;
+    margin: 0;
 }
 
-li {
-	margin: 1px;
+#statementScene {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 20px;
 }
 
-img {
-	width: 300px;
-	/* border: 5px solid lightgreen; */
+.white-b {
+    background-color: white;
+}
+
+.g-green{
+    background-color: var(--risqgemeentegreen);
+}
+
+.textTop {
+    background-color: var(--risqgemeentegreen);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.image {
+    margin-top: 50px;
+}
+
+datalist {
+    display: flex;
+    justify-content: space-between;
+    color: red;
+    width: 50%;
+  }
+  
+  input {
+    width: 50%;
+  }
+
+button {
+    margin-top: 30px;
+    font-size: 25px;
+    font-weight: bold;
+    width: 346px;
+    height: 80px;
+    border-width: 3px;
+    border-radius: 4px;
+    background-color: white;
+}
+
+.subtitleBegin {
+    position: relative;
+    text-align: center;
+    margin-top: 250px;
+    color: white;
+}
+
+.explanationBegin {
+    color: white;
+    text-align: center;
+}
+
+.green-b {
+    background-color: #00811f;
+}
+
+#greenTop {
+    position: absolute;
+    width: 390px;
+    height: 323px;
+    left: 0px;
+    top: 0px;
+    background: #00811F;
+    z-index: -1;
+}
+
+.slider-link {
+    margin-top: 20px;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.pagination {
+    position: absolute;
+    bottom: 0;
+    width: 68px;
+    height: 34px;
+    text-align: center;
+    background-color: #D9D9D9;
+    font-size: 25px;
+    font-weight: bold;
+    border-radius: 4px;
 }
