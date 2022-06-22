@@ -128,6 +128,16 @@ background: #00811F;
 z-index: -1;
 }
 
+#greenTopFinal {
+position: absolute;
+width: 390px;
+height: 323px;
+left: 0px;
+top: 0px;
+background: #00811F;
+z-index: -1;
+}
+
 .slider-link {
     margin-top: 20px;
     text-align: center;
@@ -145,3 +155,176 @@ z-index: -1;
     font-weight: bold;
     border-radius: 4px;
 }
+
+.welcome-scene {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.title {
+    margin-top: 100px;
+    color: white;
+    text-align: center;
+}
+
+.label {
+    text-align: center;
+}
+
+#greenTop {
+    position: absolute;
+    width: 390px;
+    height: 323px;
+    left: 0px;
+    top: 0px;
+    background: #00811F;
+    z-index: -2;
+}
+
+#whiteTop {
+    position: absolute;
+    width: 390px;
+    height: 121px;
+    left: 0px;
+    top: 203px;
+    background: white;
+    z-index: -1;
+}
+
+input[type=range] {
+    height: 34px;
+    -webkit-appearance: none;
+    margin: 10px 0;
+    width: 100%;
+  }
+  input[type=range]:focus {
+    outline: none;
+  }
+  input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 12px;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px #002200;
+    background: #205928;
+    border-radius: 1px;
+    border: 1px solid #18D501;
+  }
+  input[type=range]::-webkit-slider-thumb {
+    box-shadow: 3px 3px 3px #00AA00;
+    border: 2px solid #83E584;
+    height: 23px;
+    width: 23px;
+    border-radius: 23px;
+    background: #00811F;
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -7px;
+  }
+  input[type=range]:focus::-webkit-slider-runnable-track {
+    background: #205928;
+  }
+  input[type=range]::-moz-range-track {
+    width: 100%;
+    height: 12px;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px #002200;
+    background: #205928;
+    border-radius: 1px;
+    border: 1px solid #18D501;
+  }
+  input[type=range]::-moz-range-thumb {
+    box-shadow: 3px 3px 3px #00AA00;
+    border: 2px solid #83E584;
+    height: 23px;
+    width: 23px;
+    border-radius: 23px;
+    background: #00811F;
+    cursor: pointer;
+  }
+  input[type=range]::-ms-track {
+    width: 100%;
+    height: 12px;
+    cursor: pointer;
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+  }
+  input[type=range]::-ms-fill-lower {
+    background: #205928;
+    border: 1px solid #18D501;
+    border-radius: 2px;
+    box-shadow: 1px 1px 1px #002200;
+  }
+  input[type=range]::-ms-fill-upper {
+    background: #205928;
+    border: 1px solid #18D501;
+    border-radius: 2px;
+    box-shadow: 1px 1px 1px #002200;
+  }
+  input[type=range]::-ms-thumb {
+    margin-top: 1px;
+    box-shadow: 3px 3px 3px #00AA00;
+    border: 2px solid #83E584;
+    height: 23px;
+    width: 23px;
+    border-radius: 23px;
+    background: #00811F;
+    cursor: pointer;
+  }
+  input[type=range]:focus::-ms-fill-lower {
+    background: #205928;
+  }
+  input[type=range]:focus::-ms-fill-upper {
+    background: #205928;
+  }
+
+  #tickmarks {
+    margin-top: 20px;
+    color: black;
+  }
+
+  /* last page buttons */
+.buttons {
+    background-color: #00811f;
+  border: double #18D501;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  width: 346px;
+  height: 65px;
+  justify-items: center;
+  margin-left: 22px;
+}
+
+.buttonBegin {
+    position: relative;
+    border-radius: 7px;
+}
+
+
+a {
+    margin-top: 30px;
+    text-align: center;
+}
+
+/* Button werkt op alle. eerst aparte div element creeëren */
+/* De opslaan Button */
+/* button {
+    background-color: #00811f;
+    margin: 0 auto;
+    margin-top: 30px;
+    display: block;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    width: 120px;
+    height: 40px;
+    justify-items: center;
+} */

@@ -157,7 +157,9 @@ window.addEventListener('load', (event) => {
     })
 
     function endScreen() {
+
       let endScreen = document.createElement('div')
+      let whiteBackground = document.createElement('div')
       let title = document.createElement('h1')
       let label1 = document.createElement('h2')
       let button1 = document.createElement('button')
@@ -165,14 +167,15 @@ window.addEventListener('load', (event) => {
       let button2 = document.createElement('button')
       let link1 = document.createElement("a")
       let link2 = document.createElement("a")
-     
+      
       endScreen.setAttribute("class", 'welcome-scene')
+      whiteBackground.setAttribute('id', 'whiteTop')
       title.setAttribute("class", 'title')
       label1.setAttribute("class", 'label')
-      button1.setAttribute("class", 'button')
+      button1.setAttribute("class", 'buttons')
       link1.setAttribute("href", 'https://play.google.com/store/apps/details?id=nl.gemeenterotterdam.stopapp&hl=en&gl=US')
       label2.setAttribute("class", 'label')
-      button2.setAttribute("class", 'button')
+      button2.setAttribute("class", 'buttons')
       link2.setAttribute("href", 'https://www.rotterdam.nl/wonen-leven/straatintimidatie/')
   
       title.innerHTML = `Opzoek naar meer informatie?`
@@ -181,6 +184,8 @@ window.addEventListener('load', (event) => {
       label2.innerHTML = `Of ga naar de website`
       link2.innerHTML = `Gemeente Rotterdam`
       
+
+      document.body.append(whiteBackground)
       document.body.append(endScreen)
       endScreen.append(title)
       endScreen.append(label1)
