@@ -6,11 +6,14 @@
 </script>
   
 <main>
-    <h1 class="green-b">Opzoek naar meer informatie?</h1>
-    <p>Download de app</p>
-    <button on:click={() => goto(stopAppLink)}>StopApp</button>
-    <p>Of ga naar de website</p>
-    <button on:click={() => goto(gemeenteRotterdam)}>Gemeente Rotterdam</button>
+    <section class="background"></section>
+    <h1 class="title">Opzoek naar meer informatie?</h1>
+    <div class="content">
+        <p>Download de app</p>
+        <button on:click={() => goto(stopAppLink)}>StopApp</button>
+        <p>Of ga naar de website</p>
+        <button on:click={() => goto(gemeenteRotterdam)}>Gemeente Rotterdam</button>
+    </div>
     <img src="/images/logos/logo 2.png" alt="Gemeente Rotterdam Logo">
 </main>
 
@@ -19,9 +22,20 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: space-between;
+        justify-content: center;
         text-align: center;
         height:100vh
+    }
+
+    p {
+        font-family: "Montserrat Bold";
+        text-align: left;
+        font-size: x-large;
+        margin: 5px
+    }
+
+    .background {
+        height: 25vh;
     }
 
     img {
@@ -29,8 +43,8 @@
     }
 
     button {
-        width: 150px;
-        height: 50px;
+        width: 100;
+        height: 100px;
         background-color: #00811f;
         color: white;
         font-size: large;

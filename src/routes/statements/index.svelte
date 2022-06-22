@@ -7,20 +7,23 @@ const statements = [
 		{
 			title: 'Wat vinden jullie van deze opmerking?',
 			alternativeScreen: "Geen keus kunnen maken?",
+            alternativeScreenType: "slider",
 			answers: {
                 'complimenteren': 20, 'intimideren': 80,
-            }
+            },
 		},
         {
 			title: 'Zouden jullie dit zeggen tegen de persoon die nu langs loopt?',
 			alternativeScreen: "Deze scenario komt niet voor",
+            alternativeScreenType: "nothing",
 			answers: {
                 'ja': 20, 'nee': 80,
             }
 		},
 		{
-			title: 'Wat zouden jullie doen wals een persoon het volgende zegt?',
+			title: 'Wat zouden jullie doen als een persoon het volgende zegt?',
 			alternativeScreen: "Geen keus kunnen maken?",
+            alternativeScreenType: "textfield",
 			answers: {
                 'helpen': 20, 'wegsturen': 80,
             }
@@ -40,23 +43,18 @@ const statements = [
 	};
 
 </script>
-{#each statements as { title, alternativeScreen, answers }, index }
+
+{#each statements as { title, alternativeScreen, answers, alternativeScreenType }, index }
     {#if index === currentStatementIndex}
         {#key currentStatementIndex}
             {#if !showResultScreen}
-                <Statement {title} {index} {alternativeScreen} {answers} on:click={toggleResultScreen}/>
+                <Statement {title} {index} {alternativeScreen} {answers} {alternativeScreenType} on:click={toggleResultScreen}/>
             {:else}
-                <Result {answers} on:click={nextStatement}/>
+                <Result {index} {answers} on:click={nextStatement}/>
             {/if}
         {/key}
-        <p>{currentStatementIndex + 1}/{statements.length}</p>
     {/if}
 {/each}
 {#if currentStatementIndex == statements.length}
     { goto("/endscreen")}
 {/if}
-
-
-
-<style>
-</style>
