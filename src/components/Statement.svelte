@@ -56,15 +56,14 @@
             <button on:click={ () => {showAlternativeScreen = !showAlternativeScreen}}>Terug</button>
         {:else if alternativeScreenType == "textfield"}
             <textarea name="feedback" id="feedback" cols="30" placeholder="Vul in..." rows="10"></textarea>
-            <button on:click >opslaan</button>
-            <button on:click={ () => {showAlternativeScreen = !showAlternativeScreen}}>Terug</button>
+            <button class="opslaanButton" on:click >opslaan</button>
+            <button class="terugButton" on:click={ () => {showAlternativeScreen = !showAlternativeScreen}}>Terug</button>
         {/if}
     </div>
     <p class="pagination">{index + 1}/3</p>
 </div>
 
 <style>
-
 .statementScreen {
     display: flex;
     flex-direction: column;
@@ -72,7 +71,20 @@
     justify-content: center;
     align-content: space-around;
     text-align: center;
-    height:100vh
+    height: 100vh;
+}
+
+h1 {
+    color: white;
+}
+
+.greenBox {
+    position: absolute;
+    background-color: #00811f;
+    width: 391px;
+    height: 323px;
+    z-index: -1;
+    top: 0;
 }
 
 .emojis {
@@ -83,7 +95,6 @@
     width: 30px;
 
 }
-
 
 datalist {
     display: flex;
@@ -152,4 +163,20 @@ span {
     color: #FF5C50;
     border-color: #FF5C50;
 }
+
+.opslaanButton {
+    background-color: #00811f;
+    color: white;
+    border-radius: 4px;
+    font-size: 27px;
+}
+
+.terugButton {
+    background-color: #00811f;
+    color: white;
+    border-radius: 4px;
+    font-size: 27px;
+}
+
+
 </style>
