@@ -35,7 +35,7 @@
     }
 
     .background {
-        height: 25vh;
+        height: 15vh;
     }
 
     img {
