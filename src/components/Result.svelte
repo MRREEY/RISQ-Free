@@ -7,6 +7,7 @@
 	<section class="background" />
 	<h1 class="title">Bedankt voor jullie antwoorden!</h1>
 	<div class="content">
+		<div class="whiteLayer" />
 		<h2>De menigte vind deze stelling:</h2>
 		<ul>
 			{#each Object.entries(answers) as [answer, percentage]}
@@ -31,6 +32,8 @@
 
 	h2 {
 		font-family: 'Montserrat Bold';
+		font-size: 26px;
+		text-align: center;
 	}
 
 	.volgendeButton {
@@ -40,5 +43,17 @@
 		font-size: 27px;
 		-ms-transform: translate(-50%, 50%);
 		transform: translate(5%, 50%);
+	}
+
+	.whiteLayer {
+		position: absolute;
+		background-color: white;
+		z-index: -1;
+		width: 100vw;
+		height: 300px;
+	}
+
+	li {
+		font-size: large;
 	}
 </style>
