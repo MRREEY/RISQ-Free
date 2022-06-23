@@ -1,66 +1,75 @@
 <script>
-    export let index;
-    export let title;
-    export let answers;
-    export let alternativeScreen
-    export let alternativeScreenType
-    
-    const alternativeScreenTypes = ["slider", "textfield", "nothing"]
+	export let index;
+	export let title;
+	export let answers;
+	export let alternativeScreen;
+	export let alternativeScreenType;
 
-    let showAlternativeScreen = false
+	const alternativeScreenTypes = ['slider', 'textfield', 'nothing'];
+
+	let showAlternativeScreen = false;
 </script>
 
 <div class="statementScreen">
-    <section class="background"></section>
-    <h1 class="title">{title}</h1>
-    <div class="content">
-        <img alt="cartoon storyboard" class="storyboard" src="/images/storyboards/{index}.png"/>
-        {#if !showAlternativeScreen}
-            {#each Object.entries(answers) as [answer], index }
-                <button
-                    class="button"
-                    on:click
-                    class:green={index === 0}
-                    class:red={index === 1}
-                    >{answer}
-                </button>
-            {/each}
-            {#if alternativeScreenType == "nothing" }
-                <span on:click>{alternativeScreen}</span>
-            {:else}
-                <span on:click={ () => {showAlternativeScreen = !showAlternativeScreen}}>{alternativeScreen}</span>
-            {/if}
-        {:else if alternativeScreenType == "slider"}
-            <div class="emojis">
-                <img class="emoji" src="/images/logos/face-frown.png" alt="sad emoji">
-                <img class="emoji" src="/images/logos/face-smile.png" alt="happy emoji">
-            </div>
-            <datalist id="steplist">
-                {#each [0, 1, 2, 3, 4, 5] as value}
-                    {#if value == 0}
-                        <option label="intimiderend" value="{value*10}"></option> 
-                    {:else if value == 5}
-                        <option label="complimenterend" value="{value*10}"></option>
-                    {:else}
-                        <option value="{value*10}"></option>
-                    {/if}
-                {/each}
-            </datalist>
-            <input type="range" class="slider" min="0" max="100" list="steplist" step="20">
-            <datalist id="steplist">
-                {#each [0, 1, 2, 3, 4, 5] as value}
-                    <option value="{value*10}">|</option>
-                {/each}
-            </datalist>
-            <button on:click >opslaan</button>
-            <button on:click={ () => {showAlternativeScreen = !showAlternativeScreen}}>Terug</button>
-        {:else if alternativeScreenType == "textfield"}
-            <textarea name="feedback" id="feedback" cols="30" placeholder="Vul in..." rows="10"></textarea>
-            <button class="opslaanButton" on:click >opslaan</button>
-            <button class="terugButton" on:click={ () => {showAlternativeScreen = !showAlternativeScreen}}>Terug</button>
-        {/if}
-    </div>
-    <p class="pagination">{index + 1}/3</p>
+	<section class="background" />
+	<h1 class="title">{title}</h1>
+	<div class="content">
+		<img alt="cartoon storyboard" class="storyboard" src="/images/storyboards/{index}.png" />
+		{#if !showAlternativeScreen}
+			{#each Object.entries(answers) as [answer], index}
+				<button class="button" on:click class:green={index === 0} class:red={index === 1}
+					>{answer}
+				</button>
+			{/each}
+			{#if alternativeScreenType == 'nothing'}
+				<span on:click>{alternativeScreen}</span>
+			{:else}
+				<span
+					on:click={() => {
+						showAlternativeScreen = !showAlternativeScreen;
+					}}>{alternativeScreen}</span
+				>
+			{/if}
+		{:else if alternativeScreenType == 'slider'}
+			<div class="emojis">
+				<img class="emoji" src="/images/logos/face-frown.png" alt="sad emoji" />
+				<img class="emoji" src="/images/logos/face-smile.png" alt="happy emoji" />
+			</div>
+			<datalist id="steplist">
+				{#each [0, 1, 2, 3, 4, 5] as value}
+					{#if value == 0}
+						<option label="intimiderend" value={value * 10} />
+					{:else if value == 5}
+						<option label="complimenterend" value={value * 10} />
+					{:else}
+						<option value={value * 10} />
+					{/if}
+				{/each}
+			</datalist>
+			<input type="range" class="slider" min="0" max="100" list="steplist" step="20" />
+			<datalist id="steplist">
+				{#each [0, 1, 2, 3, 4, 5] as value}
+					<option value={value * 10}>|</option>
+				{/each}
+			</datalist>
+			<button class="buttonsOT" on:click>opslaan</button>
+			<button
+				class="buttonsOT"
+				on:click={() => {
+					showAlternativeScreen = !showAlternativeScreen;
+				}}>Terug</button
+			>
+		{:else if alternativeScreenType == 'textfield'}
+			<textarea name="feedback" id="feedback" cols="30" placeholder="Vul in..." rows="10" />
+			<button on:click class="opslaanButton">opslaan</button>
+			<button
+				on:click={() => {
+					showAlternativeScreen = !showAlternativeScreen;
+				}}>Terug</button
+			>
+		{/if}
+	</div>
+	<p class="pagination">{index + 1}/3</p>
 </div>
 
 <style>
@@ -193,6 +202,13 @@ span {
 
 .background {
     height: 40vh;
+}
+
+.buttonsOT {
+    background-color: #00811f;
+    color: white;
+    border-radius: 4px;
+    font-size: 27px;
 }
 
 </style>
