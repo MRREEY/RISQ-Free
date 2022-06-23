@@ -34,7 +34,7 @@
 </div>
 
 <style>
-    
+
 .resultScreen {
     display: flex;
     flex-direction: column;
@@ -81,12 +81,13 @@ h2 {
 }
 
 .volgendeButton {
+    font-family: "Montserrat";
     background-color: #00811f;
     color: white;
     border-radius: 4px;
-    font-size: 27px;
-    -ms-transform: translate(-50%, 50%);
-    transform: translate(5%, 50%);
+    width: 40%;
+    height: 50px;
+    font-size: 20px;
 }
 
 </style>

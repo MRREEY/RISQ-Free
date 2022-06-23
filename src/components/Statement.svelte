@@ -52,20 +52,19 @@
 					<option value={value * 10}>|</option>
 				{/each}
 			</datalist>
-			<button class="buttonsOT" on:click>opslaan</button>
-			<button
-				class="buttonsOT"
+			<button class="opslaanButton" on:click>opslaan</button>
+			<span
 				on:click={() => {
 					showAlternativeScreen = !showAlternativeScreen;
-				}}>Terug</button
+				}}>Terug</span
 			>
 		{:else if alternativeScreenType == 'textfield'}
 			<textarea name="feedback" id="feedback" cols="30" placeholder="Vul in..." rows="10" />
 			<button on:click class="opslaanButton">opslaan</button>
-			<button
+			<span
 				on:click={() => {
 					showAlternativeScreen = !showAlternativeScreen;
-				}}>Terug</button
+				}}>Terug</span
 			>
 		{/if}
 	</div>
@@ -190,14 +189,11 @@ span {
     background-color: #00811f;
     color: white;
     border-radius: 4px;
-    font-size: 27px;
-}
-
-.terugButton {
-    background-color: #00811f;
-    color: white;
-    border-radius: 4px;
-    font-size: 27px;
+    width: 40%;
+    height: 50px;
+    font-size: 20px;
+    align-self: center;
+    font-family: "Montserrat";
 }
 
 .background {
@@ -208,7 +204,7 @@ span {
     background-color: #00811f;
     color: white;
     border-radius: 4px;
-    font-size: 27px;
+    font-size: 20px;
 }
 
 </style>
