@@ -64,6 +64,7 @@
 </div>
 
 <style>
+
 .statementScreen {
     display: flex;
     flex-direction: column;
@@ -72,6 +73,18 @@
     align-content: space-around;
     text-align: center;
     height: 100vh;
+}
+
+.content {
+    align-items: initial;
+}
+
+#feedback {
+    border: 5px solid #00811f;
+    border-radius: 10px;
+    padding: 10px;
+    font-family: "Montserrat Bold";
+    margin-bottom: 10px;
 }
 
 h1 {
@@ -178,5 +191,8 @@ span {
     font-size: 27px;
 }
 
+.background {
+    height: 40vh;
+}
 
 </style>

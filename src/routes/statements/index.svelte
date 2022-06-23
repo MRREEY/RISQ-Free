@@ -9,7 +9,7 @@ const statements = [
 			alternativeScreen: "Geen keus kunnen maken?",
             alternativeScreenType: "slider",
 			answers: {
-                'complimenteren': 20, 'intimideren': 80,
+                'complimenteren': 80, 'intimideren': 20,
             },
 		},
         {
@@ -17,7 +17,7 @@ const statements = [
 			alternativeScreen: "Deze scenario komt niet voor",
             alternativeScreenType: "nothing",
 			answers: {
-                'ja': 20, 'nee': 80,
+                'ja': 11, 'nee': 89,
             }
 		},
 		{
@@ -25,7 +25,7 @@ const statements = [
 			alternativeScreen: "Geen keus kunnen maken?",
             alternativeScreenType: "textfield",
 			answers: {
-                'helpen': 20, 'wegsturen': 80,
+                'helpen': 63, 'wegsturen': 37,
             }
 		}
     ]
